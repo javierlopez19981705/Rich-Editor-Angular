@@ -22,60 +22,17 @@ export class AppComponent implements OnInit {
     this.toolbar = this.editor.getElementsByClassName('toolbar')[0];
     this.buttons = this.toolbar.querySelectorAll('.editor-btn:not(.has-submenu)');
     this.contentArea = this.editor.getElementsByClassName('content-area')[0];
-    this.visuellView = this.contentArea.getElementsByClassName('visuell-view')[0];
+    this.visuellView = this.contentArea.getElementsByClassName('visual-view')[0];
     this.htmlView = this.contentArea.getElementsByClassName('html-view')[0];
     this.modal = document.getElementsByClassName('modal')[0];
 
     this.visuellView.addEventListener('DOMSubtreeModified',()=>{
       this.valueInnerHTML = this.visuellView.innerHTML
     });
-
-    for(let i = 0; i < this.buttons.length; i++) {
-      let button = this.buttons[i];
-
-      button.addEventListener('click', (e:any) => {
-        const action = button.attributes.getNamedItem('data-action')?.value;
-        switch(action) {
-          case 'toggle-view':
-            this.execCodeAction(button,this.editor);
-            break;
-          case 'createLink':
-            this.execLinkAction();
-            break;
-          case 'font-size':
-            const valueFont = button.attributes.getNamedItem('value-font')?.value;
-            console.log(valueFont);
-            this.changeFontSize(valueFont);
-            break;
-          default:
-            this.execDefaultAction(action);
-        }
-
-      });
-    }
   }
 
-
-
-  changeFontSize(value:any){
-    console.log('AQUI');
-    document.execCommand('fontSize', false,'6');
-  }
-
-  execCodeAction(button:any, editor:any) {
-    if(button.classList.contains('active')) { // show visuell view
-      this.visuellView.innerHTML = this.htmlView.value;
-      this.htmlView.style.display = 'none';
-      this.visuellView.style.display = 'block';
-
-      button.classList.remove('active');
-    } else {  // show html view
-      this.htmlView.innerText = this.visuellView.innerHTML;
-      this.visuellView.style.display = 'none';
-      this.htmlView.style.display = 'block';
-
-      button.classList.add('active');
-    }
+  changeFont(value:any){
+    document.execCommand("fontName", false,`${value}`);
   }
 
   execLinkAction() {
@@ -130,10 +87,6 @@ export class AppComponent implements OnInit {
         arguments.callee
       });
     });
-  }
-
-  execDefaultAction(action:any) {
-    document.execCommand(action, false);
   }
 
   saveSelection() {

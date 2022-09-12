@@ -1,115 +1,64 @@
 <div class="wp-webdeasy-comment-editor">
     <div class="toolbar">
-        <div class="line">
-            <div class="box">
-                <span class="editor-btn icon smaller" data-action="bold" data-tag-name="b" title="Bold">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/bold.png"/>
-                </span>
-                <span class="editor-btn icon smaller" data-action="italic" data-tag-name="i" title="Italic">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/italic.png"/>
-                </span>
-                <span class="editor-btn icon smaller" data-action="underline" data-tag-name="u" title="Underline">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/underline.png"/>
-                </span>
-                <span class="editor-btn icon smaller" data-action="strikeThrough" data-tag-name="strike" title="Strike through">
-                    <img src="https://img.icons8.com/fluency-systems-filled/30/000000/strikethrough.png"/>
-                </span>
-
-
-                <span class="editor-btn icon has-submenu">
-              <img src="https://img.icons8.com/material-outlined/24/000000/increase-font.png"/>
-              <div class="submenu">
-                <span data-action="font-size" value-font="8"  class="editor-btn icon">8</span>
-                <span data-action="font-size" value-font="9" class="editor-btn icon ">9</span>
-                <span data-action="font-size" value-font="10" class="editor-btn icon">10</span>
-                <span data-action="font-size" value-font="11" class="editor-btn icon">11</span>
-                <span data-action="font-size" value-font="12" class="editor-btn icon">12</span>
-                <span data-action="font-size" value-font="14" class="editor-btn icon">14</span>
-                <span data-action="font-size" value-font="16" class="editor-btn icon">16</span>
-                <span data-action="font-size" value-font="18" class="editor-btn icon">18</span>
-                <span data-action="font-size" value-font="20" class="editor-btn icon">20</span>
-                <span data-action="font-size" value-font="22" class="editor-btn icon">22</span>
-                <span data-action="font-size" value-font="24" class="editor-btn icon">24</span>
-                <span data-action="font-size" value-font="26" class="editor-btn icon">26</span>
-                <span data-action="font-size" value-font="28" class="editor-btn icon">28</span>
-                <span data-action="font-size" value-font="36" class="editor-btn icon">36</span>
-                <span data-action="font-size" value-font="48" class="editor-btn icon">48</span>
+        <div class="box">
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/bold.png" action="bold"></app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/italic.png" action="italic"></app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/underline.png" action="underline"></app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/30/000000/strikethrough.png" action="strikeThrough"></app-action-button>
+            <div class="submenu-editor">
+                <div class="submenu">
+                    <app-action-button src="https://img.icons8.com/small/16/000000/1.png" action="fontSize" value="1"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/2.png" action="fontSize" value="2"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/3.png" action="fontSize" value="3"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/4.png" action="fontSize" value="4"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/5.png" action="fontSize" value="5"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/6.png" action="fontSize" value="6"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/small/16/000000/7.png" action="fontSize" value="7"></app-action-button>
+                </div>
+                <img src="https://img.icons8.com/material-outlined/24/000000/increase-font.png" />
             </div>
-            </span>
-
+            <div class="submenu-editor">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/choose-font.png" />
+                <div class="submenu">
+                    <button class="changeFontFamily" (click)="changeFont('Lato')"><span>Lato</span></button>
+                    <button class="changeFontFamily" (click)="changeFont('Raleway')"><span>Raleway</span></button>
+                    <button class="changeFontFamily" (click)="changeFont('Roboto')"><span>Roboto</span></button>
+                </div>
+            </div>
         </div>
 
         <div class="box">
-            <span class="editor-btn icon has-submenu">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-left.png"/>
-                    <div class="submenu">
-                        <span class="editor-btn icon" data-action="justifyLeft" data-style="textAlign:left" title="Justify left">
-                            <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-left.png"/>
-                        </span>
-            <span class="editor-btn icon" data-action="justifyCenter" data-style="textAlign:center" title="Justify center">
-                            <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-center.png"/>
-                        </span>
-            <span class="editor-btn icon" data-action="justifyRight" data-style="textAlign:right" title="Justify right">
-                            <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-right.png"/>
-                        </span>
-            <span class="editor-btn icon" data-action="formatBlock" data-style="textAlign:justify" title="Justify block">
-                            <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-justify.png"/>
-                        </span>
+            <div class="submenu-editor">
+                <img src="https://img.icons8.com/fluency-systems-filled/48/000000/align-left.png" />
+                <div class="submenu">
+                    <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/align-left.png" action="justifyLeft"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/align-center.png" action="justifyCenter"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/align-right.png" action="justifyRight"></app-action-button>
+                    <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/align-justify.png" action="formatBlock"></app-action-button>
+                </div>
+            </div>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/numbered-list.png" action="insertOrderedList"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/bulleted-list.png" action="insertUnorderedList"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/outdent.png" action="outdent"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/indent.png" action="indent"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/horizontal-line.png" action="insertHorizontalRule"> </app-action-button>
         </div>
-        </span>
-        <span class="editor-btn icon" data-action="insertOrderedList" data-tag-name="ol" title="Insert ordered list">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/numbered-list.png"/>
-                </span>
-        <span class="editor-btn icon" data-action="insertUnorderedList" data-tag-name="ul" title="Insert unordered list">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/bulleted-list.png"/>
-                </span>
-        <span class="editor-btn icon" data-action="outdent" title="Outdent" data-required-tag="li">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/outdent.png"/>
-                </span>
-        <span class="editor-btn icon" data-action="indent" title="Indent">
-                    <img src="https://img.icons8.com/fluency-systems-filled/48/000000/indent.png"/>
-                </span>
-    </div>
-    <div class="box">
-        <span class="editor-btn icon" data-action="insertHorizontalRule" title="Insert horizontal rule">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/horizontal-line.png"/>
-        </span>
-    </div>
 
-</div>
-<div class="line">
 
-    <div class="box">
-        <span class="editor-btn icon smaller" data-action="undo" title="Undo">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/undo--v1.png"/>
-        </span>
-        <span class="editor-btn icon" data-action="removeFormat" title="Remove format">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/remove-format.png"/>
-        </span>
-    </div>
+        <div class="box">
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/undo--v1.png" action="undo"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/remove-format.png" action="removeFormat"> </app-action-button>
+        </div>
 
-    <div class="box">
-        <span class="editor-btn icon smaller" data-action="createLink" title="Insert Link">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/add-link.png"/>
-        </span>
-        <span class="editor-btn icon smaller" data-action="unlink" data-tag-name="a" title="Unlink">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/delete-link.png"/>
-        </span>
+        <div class="box">
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/add-link.png" (click)="execLinkAction()"> </app-action-button>
+            <app-action-button src="https://img.icons8.com/fluency-systems-filled/48/000000/delete-link.png" action="unlink"> </app-action-button>
+        </div>
     </div>
-
-    <div class="box">
-        <span class="editor-btn icon" data-action="toggle-view" title="Show HTML-Code">
-          <img src="https://img.icons8.com/fluency-systems-filled/48/000000/source-code.png"/>
-        </span>
+    <div class="content-area">
+        <div class="visual-view" contenteditable>
+        </div>
     </div>
-
-</div>
-</div>
-<div class="content-area">
-    <div class="visuell-view" contenteditable>
-    </div>
-    <textarea class="html-view"></textarea>
-</div>
 </div>
 
 <div class="modal">
